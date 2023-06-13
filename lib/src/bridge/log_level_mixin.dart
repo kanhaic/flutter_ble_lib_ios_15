@@ -9,7 +9,7 @@ mixin LogLevelMixin on FlutterBLE {
         ArgumentName.logLevel: describeEnum(logLevel),
       },
     ).catchError((errorJson) =>
-        Future.error(BleError.fromJson(jsonDecode(errorJson))));
+        Future.error(BleError.fromJson(jsonDecode(errorJson.details))));
   }
 
   Future<LogLevel> logLevel() async {
